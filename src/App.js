@@ -19,16 +19,23 @@ function App() {
     {
       id: 3,
       name: "Child1",
-      children: [],
+      children: [5],
       gender: "female",
       parents: [1, 2],
     },
     {
       id: 4,
       name: "Child2",
-      children: [],
+      children: [5],
       gender: "male",
       parents: [1, 2],
+    },
+    {
+      id: 5,
+      name: "GrandChild",
+      children: [],
+      gender: "male",
+      parents: [3, 4],
     }
   ]
   return (
@@ -41,6 +48,8 @@ function Card(props) {
   <div className="card" style={ props.gender === "male" ? {backgroundColor: "lightblue"} : {backgroundColor: "lightpink"}}>{props.name}</div>
   )
 }
+
+
 
 function FamilyMember(props) {
   const parentsToAdd = []
